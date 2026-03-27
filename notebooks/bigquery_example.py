@@ -1,12 +1,14 @@
-import marimo as mo
-import os
-from google.cloud import bigquery
+import marimo
 
-app = mo.App(sql_output="native")
+app = marimo.App(sql_output="native")
 
 
 @app.cell
 def _():
+    import marimo as mo
+    import os
+    from google.cloud import bigquery
+
     project = os.environ.get("GOOGLE_CLOUD_PROJECT")
     client = bigquery.Client(project=project)
     mo.md(f"Connected to project: **{project}**")
