@@ -1,0 +1,5 @@
+[sql]
+default_connection = "bigquery"
+
+[sql.connections.bigquery]
+url = "bigquery://mozdata"
